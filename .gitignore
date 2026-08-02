@@ -1,0 +1,8 @@
+node_modules/
+.env
+server/uploads/profiles/*
+server/uploads/resumes/*
+!server/uploads/profiles/.gitkeep
+!server/uploads/resumes/.gitkeep
+npm-debug.log*
+.DS_Store

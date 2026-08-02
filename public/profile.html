@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile | Roots & Wings</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body data-page="profile">
+
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+  <main class="main-panel">
+    <div class="topbar" id="topbar"></div>
+    <div class="page-content">
+
+      <div class="card mb-3">
+        <div class="profile-header">
+          <div class="profile-pic-upload">
+            <div id="profile-avatar"></div>
+            <label for="picture-input"><i class="fa-solid fa-camera"></i></label>
+            <input type="file" id="picture-input" accept="image/*" style="display:none;">
+          </div>
+          <div>
+            <h2 id="profile-name" style="font-size:1.4rem;"></h2>
+            <p class="text-soft" id="profile-role"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="details">Profile Details</button>
+        <button class="tab-btn" data-tab="experience">Experience</button>
+        <button class="tab-btn" data-tab="security">Security</button>
+      </div>
+
+      <div id="tab-details">
+        <div class="card">
+          <form id="profile-form">
+            <div class="form-row">
+              <div class="form-group"><label>Full Name</label><input class="form-control" name="full_name" required></div>
+              <div class="form-group"><label>Phone</label><input class="form-control" name="phone"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Location</label><input class="form-control" name="location"></div>
+              <div class="form-group"><label>LinkedIn URL</label><input class="form-control" name="linkedin_url"></div>
+            </div>
+            <div class="form-group"><label>Bio</label><textarea class="form-control" name="bio" placeholder="Tell your story..."></textarea></div>
+            <div class="form-group"><label>Skills (comma separated)</label><input class="form-control" name="skills" placeholder="JavaScript, React, Public Speaking"></div>
+
+            <div id="student-only-fields" style="display:none;">
+              <div class="form-row">
+                <div class="form-group"><label>University</label><input class="form-control" name="university"></div>
+                <div class="form-group"><label>Course</label><input class="form-control" name="course"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Branch</label><input class="form-control" name="branch"></div>
+                <div class="form-group"><label>Graduation Year</label><input class="form-control" type="number" name="graduation_year"></div>
+              </div>
+              <div class="form-group"><label>Resume</label>
+                <div class="flex gap-1" style="align-items:center;">
+                  <input type="file" id="resume-input" accept=".pdf,.doc,.docx">
+                  <a id="resume-link" href="#" target="_blank" style="display:none; font-size:0.85rem;" class="btn btn-outline btn-sm">View Current Resume</a>
+                </div>
+              </div>
+            </div>
+
+            <div id="alumni-only-fields" style="display:none;">
+              <div class="form-row">
+                <div class="form-group"><label>University</label><input class="form-control" name="university"></div>
+                <div class="form-group"><label>Graduation Year</label><input class="form-control" type="number" name="graduation_year"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Current Company</label><input class="form-control" name="current_company"></div>
+                <div class="form-group"><label>Designation</label><input class="form-control" name="designation"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Industry</label><input class="form-control" name="industry"></div>
+                <div class="form-group"><label>Years of Experience</label><input class="form-control" type="number" name="years_experience"></div>
+              </div>
+              <div class="form-group flex gap-1" style="align-items:center;">
+                <input type="checkbox" name="is_mentor_available" id="mentor-avail" style="width:auto;">
+                <label for="mentor-avail" style="margin:0; font-weight:500;">Available for mentorship requests</label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="tab-experience" style="display:none;">
+        <div class="card mb-3">
+          <h3 style="font-size:1rem;" class="mb-2">Add Experience</h3>
+          <form id="experience-form">
+            <div class="form-row">
+              <div class="form-group"><label>Title</label><input class="form-control" name="title" required></div>
+              <div class="form-group"><label>Company</label><input class="form-control" name="company" required></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Start Date</label><input class="form-control" type="date" name="start_date"></div>
+              <div class="form-group"><label>End Date</label><input class="form-control" type="date" name="end_date"></div>
+            </div>
+            <div class="form-group"><label>Description</label><textarea class="form-control" name="description"></textarea></div>
+            <button type="submit" class="btn btn-outline">Add Experience</button>
+          </form>
+        </div>
+        <div class="card"><div id="experience-list"></div></div>
+      </div>
+
+      <div id="tab-security" style="display:none;">
+        <div class="card">
+          <h3 style="font-size:1rem;" class="mb-2">Change Password</h3>
+          <form id="password-form">
+            <div class="form-group"><label>Current Password</label><input class="form-control" type="password" name="current_password" required></div>
+            <div class="form-group"><label>New Password</label><input class="form-control" type="password" name="new_password" minlength="6" required></div>
+            <button type="submit" class="btn btn-primary">Update Password</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/layout.js"></script>
+<script src="/js/profile.js"></script>
+</body>
+</html>

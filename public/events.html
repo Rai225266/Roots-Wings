@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events | Roots & Wings</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body data-page="events">
+
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+  <main class="main-panel">
+    <div class="topbar" id="topbar"></div>
+    <div class="page-content">
+
+      <div class="tabs">
+        <button class="tab-btn active" data-view="list">List View</button>
+        <button class="tab-btn" data-view="calendar">Calendar View</button>
+        <button class="tab-btn" data-view="mine">My Events</button>
+      </div>
+
+      <div id="view-list">
+        <div class="toolbar">
+          <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input class="form-control" id="search-input" placeholder="Search events..."></div>
+          <select class="form-control filter-select" id="filter-type"><option value="">All Types</option><option value="webinar">Webinar</option><option value="meetup">Meetup</option><option value="workshop">Workshop</option><option value="networking">Networking</option><option value="other">Other</option></select>
+          <button class="btn btn-primary" id="open-create" style="display:none;"><i class="fa-solid fa-plus"></i> Create Event</button>
+        </div>
+        <div class="grid grid-3" id="events-grid"><div class="loading-state"><span class="spinner"></span>Loading events...</div></div>
+        <div class="pagination" id="pagination"></div>
+      </div>
+
+      <div id="view-calendar" style="display:none;">
+        <div class="flex-between mb-2">
+          <button class="btn btn-outline btn-sm" id="cal-prev"><i class="fa-solid fa-chevron-left"></i></button>
+          <h3 id="cal-month-label" style="font-size:1.1rem;"></h3>
+          <button class="btn btn-outline btn-sm" id="cal-next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div class="calendar-grid" id="calendar-day-names"></div>
+        <div class="calendar-grid mt-1" id="calendar-grid"></div>
+      </div>
+
+      <div id="view-mine" style="display:none;">
+        <h3 style="font-size:1.05rem;" class="mb-2">Events I Created</h3>
+        <div class="grid grid-3 mb-3" id="created-grid"></div>
+        <h3 style="font-size:1.05rem;" class="mb-2">Events I Joined</h3>
+        <div class="grid grid-3" id="joined-grid"></div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="detail-modal">
+  <div class="modal" style="position:relative; max-width:560px;">
+    <button class="modal-close" data-close="detail-modal"><i class="fa-solid fa-xmark"></i></button>
+    <div id="detail-body"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="form-modal">
+  <div class="modal" style="position:relative; max-width:600px;">
+    <button class="modal-close" data-close="form-modal"><i class="fa-solid fa-xmark"></i></button>
+    <h3>Create an Event</h3>
+    <form id="event-form">
+      <div class="form-group"><label>Event Title</label><input class="form-control" name="title" required></div>
+      <div class="form-group"><label>Description</label><textarea class="form-control" name="description"></textarea></div>
+      <div class="form-row">
+        <div class="form-group"><label>Event Type</label><select class="form-control" name="event_type"><option value="webinar">Webinar</option><option value="meetup">Meetup</option><option value="workshop">Workshop</option><option value="networking">Networking</option><option value="other">Other</option></select></div>
+        <div class="form-group"><label>Max Participants</label><input class="form-control" type="number" name="max_participants" placeholder="0 = unlimited"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Date</label><input class="form-control" type="date" name="event_date" required></div>
+        <div class="form-group"><label>Time</label><input class="form-control" type="time" name="event_time"></div>
+      </div>
+      <div class="form-group"><label>Location / Meeting Link</label><input class="form-control" name="location"></div>
+      <button type="submit" class="btn btn-primary btn-block">Create Event</button>
+    </form>
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/layout.js"></script>
+<script src="/js/events.js"></script>
+</body>
+</html>

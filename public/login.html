@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log In | Roots & Wings</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/auth.css">
+</head>
+<body data-page="login">
+
+<div class="auth-wrap">
+  <div class="auth-side">
+    <div class="auth-orb"></div>
+    <a href="/" class="brand"><img src="/images/logo-mark.png" class="brand-icon-logo" alt="Roots & Wings">Roots &amp; Wings</a>
+    <div>
+      <h2>Pick up right where your last mentorship call left off.</h2>
+      <p>Log in to see mentorship requests, saved jobs, upcoming events, and messages from your network.</p>
+    </div>
+    <div class="auth-quote">
+      <p>"Roots & Wings connected me with a mentor who helped me land my first internship at a fintech startup."</p>
+      <strong>— Rai, Student</strong>
+    </div>
+  </div>
+
+  <div class="auth-main">
+    <div class="auth-card">
+      <a href="/" class="brand mobile-brand"><img src="/images/logo-mark.png" class="brand-icon-logo" alt="Roots & Wings">Roots &amp; Wings</a>
+      <h1>Welcome back</h1>
+      <p class="sub">Log in to continue growing your network.</p>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input class="form-control" type="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <div class="password-field">
+            <input class="form-control" type="password" name="password" placeholder="••••••••" required>
+            <button type="button" class="toggle-eye"><i class="fa-solid fa-eye"></i></button>
+          </div>
+        </div>
+        <div class="forgot-link"><a href="/forgot-password.html">Forgot password?</a></div>
+        <button type="submit" class="btn btn-primary btn-block">Log In <i class="fa-solid fa-arrow-right"></i></button>
+      </form>
+
+      <!---  <div class="divider-text">Quick demo access</div>
+     <div class="grid grid-3" style="gap:10px;">
+        <button class="btn btn-outline btn-sm demo-account-btn" data-email="admin@rootswings.com" data-password="Admin@123"><i class="fa-solid fa-user-shield"></i>&nbsp;Admin</button>
+        <button class="btn btn-outline btn-sm demo-account-btn" data-email="alumni@rootswings.com" data-password="Alumni@123"><i class="fa-solid fa-user-tie"></i>&nbsp;Alumni</button>
+        <button class="btn btn-outline btn-sm demo-account-btn" data-email="student@rootswings.com" data-password="Student@123"><i class="fa-solid fa-user-graduate"></i>&nbsp;Student</button>
+      </div> 
+    
+      <p class="form-hint text-center mt-2">Demo passwords: Admin@123 / Alumni@123 / Student@123</p>
+--->
+      <p class="auth-foot">Don't have an account? <a href="/register.html">Sign up free</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

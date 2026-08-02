@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account | Roots & Wings</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/auth.css">
+</head>
+<body data-page="register">
+
+<div class="auth-wrap">
+  <div class="auth-side">
+    <div class="auth-orb"></div>
+    <a href="/" class="brand"><img src="/images/logo-mark.png" class="brand-icon-logo" alt="Roots & Wings">Roots &amp; Wings</a>
+    <div>
+      <h2>Join a network built on giving back.</h2>
+      <p>Whether you're looking for your first internship or ready to mentor the next generation, your account takes two minutes to set up.</p>
+    </div>
+    <div class="auth-quote">
+      <p>"Giving back to students through this platform has been one of the most rewarding parts of my career."</p>
+      <strong>— Rohan Mehta, Alumni</strong>
+    </div>
+  </div>
+
+  <div class="auth-main">
+    <div class="auth-card">
+      <a href="/" class="brand mobile-brand"><img src="/images/logo-mark.png" class="brand-icon-logo" alt="Roots & Wings">Roots &amp; Wings</a>
+      <h1>Create your account</h1>
+      <p class="sub">Choose your role to get started.</p>
+
+      <div class="role-toggle">
+        <button type="button" class="active" data-role="student"><i class="fa-solid fa-user-graduate"></i>&nbsp; Student</button>
+        <button type="button" data-role="alumni"><i class="fa-solid fa-user-tie"></i>&nbsp; Alumni</button>
+      </div>
+
+      <form id="register-form">
+        <input type="hidden" id="selected-role" name="role" value="student">
+
+        <div class="form-row">
+          <div class="form-group"><label>Full Name</label><input class="form-control" type="text" name="full_name" required></div>
+          <div class="form-group"><label>Phone Number</label><input class="form-control" type="tel" name="phone"></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input class="form-control" type="email" name="email" required></div>
+        <div class="form-group"><label>University</label><input class="form-control" type="text" name="university" placeholder="e.g. National Institute of Technology" required></div>
+
+        <!-- STUDENT FIELDS -->
+        <div id="student-fields" class="step-fields active">
+          <div class="form-row">
+            <div class="form-group"><label>Course</label><input class="form-control" type="text" name="course" placeholder="B.Tech, BCA..."></div>
+            <div class="form-group"><label>Branch</label><input class="form-control" type="text" name="branch" placeholder="Computer Science"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Current Year</label><input class="form-control" type="text" name="current_year" placeholder="3rd Year / Final Year"></div>
+            <div class="form-group"><label>Graduation Year</label><input class="form-control" type="number" name="student_graduation_year" placeholder="2027"></div>
+          </div>
+        </div>
+
+        <!-- ALUMNI FIELDS -->
+        <div id="alumni-fields" class="step-fields">
+          <div class="form-row">
+            <div class="form-group"><label>Degree</label><input class="form-control" type="text" name="degree" placeholder="B.Tech Computer Science"></div>
+            <div class="form-group"><label>Graduation Year</label><input class="form-control" type="number" name="alumni_graduation_year" placeholder="2019"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Current Company</label><input class="form-control" type="text" name="current_company"></div>
+            <div class="form-group"><label>Designation</label><input class="form-control" type="text" name="designation"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Industry</label><input class="form-control" type="text" name="industry" placeholder="Information Technology"></div>
+            <div class="form-group"><label>Years of Experience</label><input class="form-control" type="number" name="years_experience" min="0"></div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Password</label>
+            <div class="password-field"><input class="form-control" type="password" name="password" minlength="6" required><button type="button" class="toggle-eye"><i class="fa-solid fa-eye"></i></button></div>
+          </div>
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <div class="password-field"><input class="form-control" type="password" name="confirm_password" minlength="6" required><button type="button" class="toggle-eye"><i class="fa-solid fa-eye"></i></button></div>
+          </div>
+        </div>
+
+        <div class="form-group flex gap-1" style="align-items:center;">
+          <input type="checkbox" name="terms" id="terms" style="width:auto;">
+          <label for="terms" style="margin:0; font-weight:500; font-size:0.85rem;">I agree to the Terms of Service and Privacy Policy</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Create Account <i class="fa-solid fa-arrow-right"></i></button>
+      </form>
+
+      <p class="auth-foot">Already have an account? <a href="/login.html">Log in</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internships | Roots & Wings</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body data-page="internships">
+
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+  <main class="main-panel">
+    <div class="topbar" id="topbar"></div>
+    <div class="page-content">
+
+      <div class="tabs" id="intern-tabs">
+        <button class="tab-btn active" data-tab="browse">Browse Internships</button>
+        <span id="alumni-tabs"></span>
+      </div>
+
+      <div id="tab-browse">
+        <div class="toolbar">
+          <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input class="form-control" id="search-input" placeholder="Search internships..."></div>
+          <select class="form-control filter-select" id="filter-mode"><option value="">All Modes</option><option value="remote">Remote</option><option value="onsite">Onsite</option><option value="hybrid">Hybrid</option></select>
+          <input class="form-control filter-select" id="filter-location" placeholder="Location">
+          <button class="btn btn-gold" id="open-post" style="display:none;"><i class="fa-solid fa-plus"></i> Post Internship</button>
+        </div>
+        <div class="grid grid-3" id="grid"><div class="loading-state"><span class="spinner"></span>Loading internships...</div></div>
+        <div class="pagination" id="pagination"></div>
+      </div>
+
+      <div id="tab-myposts" style="display:none;">
+        <div class="table-wrap card"><table class="data-table"><thead><tr><th>Title</th><th>Company</th><th>Posted</th><th>Status</th><th>Actions</th></tr></thead><tbody id="myposts-tbody"></tbody></table></div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="detail-modal">
+  <div class="modal" style="position:relative; max-width:600px;">
+    <button class="modal-close" data-close="detail-modal"><i class="fa-solid fa-xmark"></i></button>
+    <div id="detail-body"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="form-modal">
+  <div class="modal" style="position:relative; max-width:600px;">
+    <button class="modal-close" data-close="form-modal"><i class="fa-solid fa-xmark"></i></button>
+    <h3 id="form-title">Post an Internship</h3>
+    <form id="intern-form">
+      <input type="hidden" name="internship_id">
+      <div class="form-row">
+        <div class="form-group"><label>Title</label><input class="form-control" name="title" required></div>
+        <div class="form-group"><label>Company</label><input class="form-control" name="company" required></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Location</label><input class="form-control" name="location"></div>
+        <div class="form-group"><label>Mode</label><select class="form-control" name="mode"><option value="remote">Remote</option><option value="onsite">Onsite</option><option value="hybrid">Hybrid</option></select></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Duration</label><input class="form-control" name="duration" placeholder="3 months"></div>
+        <div class="form-group"><label>Stipend</label><input class="form-control" name="stipend"></div>
+      </div>
+      <div class="form-group"><label>Description</label><textarea class="form-control" name="description" required></textarea></div>
+      <div class="form-group"><label>Skills Required</label><input class="form-control" name="skills_required"></div>
+      <div class="form-group"><label>Last Date to Apply</label><input class="form-control" type="date" name="last_date_to_apply"></div>
+      <button type="submit" class="btn btn-gold btn-block">Save Internship</button>
+    </form>
+  </div>
+</div>
+
+<div class="modal-overlay" id="apply-modal">
+  <div class="modal" style="position:relative;">
+    <button class="modal-close" data-close="apply-modal"><i class="fa-solid fa-xmark"></i></button>
+    <h3>Apply to this Internship</h3>
+    <form id="apply-form">
+      <input type="hidden" name="internship_id">
+      <div class="form-group"><label>Cover Note (optional)</label><textarea class="form-control" name="cover_note"></textarea></div>
+      <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
+    </form>
+  </div>
+</div>
+
+<!-- Applicants Modal -->
+<div class="modal-overlay" id="applicants-modal">
+  <div class="modal" style="position:relative; max-width:600px;">
+    <button class="modal-close" data-close="applicants-modal"><i class="fa-solid fa-xmark"></i></button>
+    <h3 id="applicants-title">Applicants</h3>
+    <div id="applicants-body"><div class="loading-state"><span class="spinner"></span></div></div>
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/layout.js"></script>
+<script src="/js/internships.js"></script>
+</body>
+</html>

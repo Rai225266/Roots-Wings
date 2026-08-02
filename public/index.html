@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roots & Wings | Alumni-Student Networking Platform</title>
+<meta name="description" content="Roots & Wings connects students with alumni for mentorship, internships, placements, and career guidance.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/landing.css">
+</head>
+<body data-page="landing">
+
+<nav class="navbar">
+  <div class="container">
+    <a href="/" class="brand"><img src="/images/logo-mark.png" class="brand-icon-logo" alt="Roots & Wings">Roots <span class="accent">&amp;</span> Wings</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#testimonials">Stories</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+      <div id="nav-auth-area" class="flex gap-1">
+        <a href="/login.html" class="btn btn-outline btn-sm">Log In</a>
+        <a href="/register.html" class="btn btn-primary btn-sm">Join Free</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <svg class="hero-rings" viewBox="0 0 480 480"><circle cx="240" cy="240" r="230"/><circle cx="240" cy="240" r="170"/><circle cx="240" cy="240" r="110"/><circle cx="240" cy="240" r="50"/></svg>
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Alumni × Student Network</span>
+      <h1>Grow your <em>roots</em>. Find your <em>wings</em>.</h1>
+      <p class="lead">Roots & Wings connects students with alumni mentors for internships, placements, career guidance, and lifelong professional relationships — all in one place.</p>
+      <div class="hero-cta">
+        <a href="/register.html" class="btn btn-gold">Get Started Free <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#about" class="btn btn-outline">How it works</a>
+      </div>
+      <div class="hero-stats-row">
+        <div><div class="stat-num" id="stat-students">0+</div><div class="stat-label">Students</div></div>
+        <div><div class="stat-num" id="stat-alumni">0+</div><div class="stat-label">Alumni Mentors</div></div>
+        <div><div class="stat-num" id="stat-jobs">0+</div><div class="stat-label">Jobs Posted</div></div>
+        <div><div class="stat-num" id="stat-events">0+</div><div class="stat-label">Events Hosted</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="floating-card card-1 float" style="animation-delay:0s;">
+          <div class="fc-top"><div class="avatar">RM</div><div><div class="fc-name">Rohan Mehta</div><div class="fc-role">Sr. Engineer, TechNova</div></div></div>
+          <p class="fc-body">"Happy to mentor final-year CS students on system design."</p>
+        </div>
+        <div class="floating-card card-2 float" style="animation-delay:1.2s;">
+          <div class="fc-top"><i class="fa-solid fa-briefcase" style="color:var(--wing-500); font-size:1.4rem;"></i><div><div class="fc-name">New Internship</div><div class="fc-role">Backend Engineering · Remote</div></div></div>
+          <p class="fc-body">Stipend ₹15,000/mo · 3 months</p>
+        </div>
+        <div class="floating-card card-3 float" style="animation-delay:0.6s;">
+          <div class="fc-top"><i class="fa-solid fa-calendar-days" style="color:var(--root-600); font-size:1.4rem;"></i><div><div class="fc-name">Upcoming Event</div><div class="fc-role">Alumni Career Panel</div></div></div>
+          <p class="fc-body">Online · 200 seats available</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="reveal">
+      <span class="eyebrow">Why Roots & Wings</span>
+      <h2 class="mt-1" style="font-size:clamp(1.8rem,3.4vw,2.5rem);">A living bridge between graduates and the students who'll follow them</h2>
+      <p class="text-soft mt-2">Every university has decades of alumni scattered across companies and industries — an enormous, mostly untapped resource. Roots & Wings gives students a direct line to that experience, and gives alumni an easy, low-friction way to give back.</p>
+      <ul class="about-list">
+        <li><span class="num">01</span><div><strong>Verified alumni directory</strong><p class="text-soft">Search by university, company, industry, or skills.</p></div></li>
+        <li><span class="num">02</span><div><strong>Structured mentorship</strong><p class="text-soft">Request, accept, and schedule mentorship in a few clicks.</p></div></li>
+        <li><span class="num">03</span><div><strong>Jobs & internships pipeline</strong><p class="text-soft">Alumni post real openings; students apply and track status.</p></div></li>
+      </ul>
+    </div>
+    <div class="about-visual reveal">
+      <i class="fa-solid fa-people-arrows ring-icon"></i>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features" style="background:var(--bg-alt);">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Platform Features</span>
+      <h2>Everything both sides need, nothing they don't</h2>
+      <p>Built for students chasing their first break and alumni who want mentoring to feel effortless.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card feature-card reveal"><div class="feature-icon"><i class="fa-solid fa-magnifying-glass"></i></div><h3>Alumni Directory</h3><p>Filter thousands of alumni by university, company, skills, industry, and graduation year.</p></div>
+      <div class="card feature-card reveal"><div class="feature-icon"><i class="fa-solid fa-handshake-angle"></i></div><h3>Mentorship Requests</h3><p>Send a request, get accepted, and schedule a meeting — all tracked in your dashboard.</p></div>
+      <div class="card feature-card reveal"><div class="feature-icon"><i class="fa-solid fa-briefcase"></i></div><h3>Jobs & Internships</h3><p>Alumni post real openings. Students apply, save, and track application status.</p></div>
+      <div class="card feature-card reveal"><div class="feature-icon"><i class="fa-solid fa-calendar-check"></i></div><h3>Events & Webinars</h3><p>Create and join networking events, workshops, and career panels.</p></div>
+      <div class="card feature-card reveal"><div class="feature-icon"><i class="fa-solid fa-comments"></i></div><h3>Direct Messaging</h3><p>Real-time inbox to message mentors, recruiters, and peers securely.</p></div>
+      <div class="card feature-card reveal"><div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div><h3>Verified & Secure</h3><p>Role-based access, JWT authentication, and encrypted passwords throughout.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials" style="background:var(--bg-alt);">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Community Voices</span>
+      <h2>Stories from students and alumni</h2>
+    </div>
+    <div class="testimonial-track" id="testimonial-track">
+      <div class="loading-state"><span class="spinner"></span>Loading stories...</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info-card reveal">
+      <span class="eyebrow" style="color:var(--wing-500);">Get in touch</span>
+      <h3 class="mt-2">We'd love to hear from you</h3>
+      <p>Questions about partnering your university, or feedback on the platform? Reach out anytime.</p>
+      <div class="contact-info-row"><i class="fa-solid fa-envelope"></i><div><strong>Email</strong><span>hello@rootswings.app</span></div></div>
+      <div class="contact-info-row"><i class="fa-solid fa-phone"></i><div><strong>Phone</strong><span>+91 98765 43210</span></div></div>
+      <div class="contact-info-row"><i class="fa-solid fa-location-dot"></i><div><strong>Location</strong><span>Bengaluru, India</span></div></div>
+      <div class="social-row">
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <form class="card reveal" id="contact-form">
+      <h3>Send us a message</h3>
+      <div class="form-row">
+        <div class="form-group"><label>Full Name</label><input class="form-control" type="text" name="name" required></div>
+        <div class="form-group"><label>Email Address</label><input class="form-control" type="email" name="email" required></div>
+      </div>
+      <div class="form-group"><label>Subject</label><input class="form-control" type="text" name="subject"></div>
+      <div class="form-group"><label>Message</label><textarea class="form-control" name="message" required></textarea></div>
+      <button type="submit" class="btn btn-primary btn-block">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="brand" style="color:#fff;"><img src="/images/logo-mark.png" class="brand-icon-logo" alt="Roots & Wings">Roots & Wings</a>
+        <p class="mt-2" style="max-width:320px;">The alumni-student networking platform built for mentorship, internships, and lifelong career growth.</p>
+      </div>
+      <div><h4>Platform</h4><ul class="footer-list"><li><a href="/alumni.html">Alumni Directory</a></li><li><a href="/jobs.html">Jobs</a></li><li><a href="/internships.html">Internships</a></li><li><a href="/events.html">Events</a></li></ul></div>
+      <div><h4>Company</h4><ul class="footer-list"><li><a href="#about">About Us</a></li><li><a href="#contact">Contact</a></li><li><a href="#">Careers</a></li><li><a href="#">Blog</a></li></ul></div>
+      <div><h4>Legal</h4><ul class="footer-list"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Cookie Policy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Roots & Wings. All rights reserved.</span>
+      <span>Built with care for students & alumni everywhere 🌱</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/api.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

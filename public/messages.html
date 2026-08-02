@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Messages | Roots & Wings</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body data-page="messages">
+
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+  <main class="main-panel">
+    <div class="topbar" id="topbar"></div>
+
+    <div class="chat-shell">
+      <div class="chat-list-panel">
+        <div class="chat-list-head">
+          <h3>Conversations</h3>
+          <button class="btn btn-solid btn-sm" id="new-msg-btn"><i class="fa-solid fa-pen"></i> New</button>
+        </div>
+        <div class="chat-list" id="chat-list">
+          <div class="loading-state"><span class="spinner"></span>Loading conversations...</div>
+        </div>
+      </div>
+      <div class="chat-window" id="chat-window">
+        <div class="chat-empty">
+          <i class="fa-regular fa-comments" style="font-size:2.4rem;"></i>
+          <p>Select a conversation, or start a new one</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- New Message Modal -->
+<div class="modal-overlay" id="new-msg-modal">
+  <div class="modal" style="position:relative;">
+    <button class="modal-close" data-close="new-msg-modal"><i class="fa-solid fa-xmark"></i></button>
+    <h3>Start a New Message</h3>
+    <div class="form-group">
+      <label>Search by name or email</label>
+      <input class="form-control" id="user-search-input" placeholder="e.g. Rohan, alumni@rootswings.com" autocomplete="off">
+    </div>
+    <div id="user-search-results"></div>
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/layout.js"></script>
+<script src="/js/messages.js"></script>
+</body>
+</html>

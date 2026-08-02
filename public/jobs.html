@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jobs | Roots & Wings</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body data-page="jobs">
+
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+  <main class="main-panel">
+    <div class="topbar" id="topbar"></div>
+    <div class="page-content">
+
+      <div class="tabs" id="job-tabs">
+        <button class="tab-btn active" data-tab="browse">Browse Jobs</button>
+        <span id="student-tabs"></span>
+        <span id="alumni-tabs"></span>
+      </div>
+
+      <div id="tab-browse">
+        <div class="toolbar">
+          <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input class="form-control" id="search-input" placeholder="Search jobs by title, company, skill..."></div>
+          <select class="form-control filter-select" id="filter-type">
+            <option value="">All Job Types</option><option value="full-time">Full-time</option><option value="part-time">Part-time</option><option value="contract">Contract</option><option value="remote">Remote</option>
+          </select>
+          <input class="form-control filter-select" id="filter-location" placeholder="Location">
+          <button class="btn btn-primary" id="open-post-job" style="display:none;"><i class="fa-solid fa-plus"></i> Post Job</button>
+        </div>
+        <div class="grid grid-3" id="jobs-grid"><div class="loading-state"><span class="spinner"></span>Loading jobs...</div></div>
+        <div class="pagination" id="pagination"></div>
+      </div>
+
+      <div id="tab-applications" style="display:none;">
+        <div class="table-wrap card"><table class="data-table" id="applications-table"><thead><tr><th>Job Title</th><th>Company</th><th>Applied</th><th>Status</th></tr></thead><tbody></tbody></table></div>
+      </div>
+
+      <div id="tab-saved" style="display:none;">
+        <div class="grid grid-3" id="saved-grid"></div>
+      </div>
+
+      <div id="tab-myjobs" style="display:none;">
+        <div class="table-wrap card"><table class="data-table"><thead><tr><th>Title</th><th>Company</th><th>Posted</th><th>Status</th><th>Actions</th></tr></thead><tbody id="myjobs-tbody"></tbody></table></div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- Job Detail Modal -->
+<div class="modal-overlay" id="job-detail-modal">
+  <div class="modal" style="position:relative; max-width:600px;">
+    <button class="modal-close" data-close="job-detail-modal"><i class="fa-solid fa-xmark"></i></button>
+    <div id="job-detail-body"></div>
+  </div>
+</div>
+
+<!-- Post/Edit Job Modal -->
+<div class="modal-overlay" id="job-form-modal">
+  <div class="modal" style="position:relative; max-width:600px;">
+    <button class="modal-close" data-close="job-form-modal"><i class="fa-solid fa-xmark"></i></button>
+    <h3 id="job-form-title">Post a Job</h3>
+    <form id="job-form">
+      <input type="hidden" name="job_id">
+      <div class="form-row">
+        <div class="form-group"><label>Job Title</label><input class="form-control" name="title" required></div>
+        <div class="form-group"><label>Company</label><input class="form-control" name="company" required></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Location</label><input class="form-control" name="location"></div>
+        <div class="form-group"><label>Job Type</label>
+          <select class="form-control" name="job_type"><option value="full-time">Full-time</option><option value="part-time">Part-time</option><option value="contract">Contract</option><option value="remote">Remote</option></select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Experience Required</label><input class="form-control" name="experience_required"></div>
+        <div class="form-group"><label>Salary Range</label><input class="form-control" name="salary_range"></div>
+      </div>
+      <div class="form-group"><label>Description</label><textarea class="form-control" name="description" required></textarea></div>
+      <div class="form-group"><label>Skills Required</label><input class="form-control" name="skills_required"></div>
+      <div class="form-group"><label>Last Date to Apply</label><input class="form-control" type="date" name="last_date_to_apply"></div>
+      <button type="submit" class="btn btn-primary btn-block">Save Job</button>
+    </form>
+  </div>
+</div>
+
+<!-- Apply Modal -->
+<div class="modal-overlay" id="apply-modal">
+  <div class="modal" style="position:relative;">
+    <button class="modal-close" data-close="apply-modal"><i class="fa-solid fa-xmark"></i></button>
+    <h3>Apply to this Job</h3>
+    <form id="apply-form">
+      <input type="hidden" name="job_id">
+      <div class="form-group"><label>Cover Note (optional)</label><textarea class="form-control" name="cover_note" placeholder="Why are you a good fit?"></textarea></div>
+      <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
+    </form>
+  </div>
+</div>
+
+<!-- Applicants Modal -->
+<div class="modal-overlay" id="applicants-modal">
+  <div class="modal" style="position:relative; max-width:600px;">
+    <button class="modal-close" data-close="applicants-modal"><i class="fa-solid fa-xmark"></i></button>
+    <h3 id="applicants-title">Applicants</h3>
+    <div id="applicants-body"><div class="loading-state"><span class="spinner"></span></div></div>
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/layout.js"></script>
+<script src="/js/jobs.js"></script>
+</body>
+</html>

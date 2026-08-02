@@ -1,0 +1,113 @@
+/* -------------------- Hero -------------------- */
+.hero {
+  position: relative;
+  padding: 160px 0 90px;
+  overflow: hidden;
+  background: var(--bg);
+  border-bottom: 2.5px solid var(--ink-900);
+}
+[data-theme="dark"] .hero { border-bottom-color: rgba(237,243,238,0.35); }
+.hero-rings { display: none; }
+
+.hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.7rem);
+  line-height: 1.06;
+  margin: 20px 0 22px;
+}
+.hero h1 em {
+  font-style: normal;
+  background: var(--wing-500);
+  padding: 0 10px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.hero p.lead { font-size: 1.12rem; color: var(--text-soft); max-width: 520px; margin-bottom: 34px; }
+.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.hero-stats-row { display: flex; gap: 34px; margin-top: 48px; flex-wrap: wrap; }
+.hero-stats-row .stat-num { font-family: var(--font-display); font-size: 1.7rem; font-weight: 700; color: var(--root-800); }
+[data-theme="dark"] .hero-stats-row .stat-num { color: var(--wing-500); }
+.hero-stats-row .stat-label { font-size: 0.8rem; color: var(--text-soft); }
+
+.hero-visual { position: relative; }
+.hero-card-stack { position: relative; height: 460px; }
+.floating-card {
+  position: absolute; width: 240px; padding: 18px; border-radius: var(--radius-md);
+  background: var(--surface); box-shadow: var(--shadow-md); border: 2.5px solid var(--ink-900);
+}
+[data-theme="dark"] .floating-card { border-color: rgba(237,243,238,0.4); }
+.floating-card.card-1 { top: 0; left: 20px; z-index: 3; }
+.floating-card.card-2 { top: 150px; right: 0; z-index: 2; }
+.floating-card.card-3 { bottom: 0; left: 60px; z-index: 1; }
+.floating-card .fc-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.floating-card .fc-top img, .floating-card .fc-top .avatar { width: 38px; height: 38px; }
+.floating-card .fc-name { font-weight: 700; font-size: 0.9rem; }
+.floating-card .fc-role { font-size: 0.76rem; color: var(--text-soft); }
+.floating-card .fc-body { font-size: 0.82rem; color: var(--text-soft); }
+
+/* -------------------- Logos / trust -------------------- */
+.trust-strip { padding: 30px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.trust-strip .container { display: flex; align-items: center; justify-content: center; gap: 46px; flex-wrap: wrap; opacity: 0.75; font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; color: var(--text-soft); }
+
+/* -------------------- About -------------------- */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
+.about-visual {
+  border-radius: var(--radius-lg); background: linear-gradient(160deg, var(--root-700), var(--root-950));
+  min-height: 380px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;
+}
+.about-visual .ring-icon { font-size: 5rem; color: var(--wing-500); opacity: 0.9; }
+.about-list { margin-top: 24px; display: flex; flex-direction: column; gap: 16px; }
+.about-list li { display: flex; gap: 14px; align-items: flex-start; }
+.about-list .num { font-family: var(--font-display); font-weight: 700; color: var(--wing-600); font-size: 1.1rem; }
+[data-theme="dark"] .about-list .num { color: var(--wing-500); }
+
+/* -------------------- Features -------------------- */
+.feature-card { text-align: left; }
+.feature-icon {
+  width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center;
+  background: var(--root-100); color: var(--root-700); font-size: 1.3rem; margin-bottom: 18px;
+}
+[data-theme="dark"] .feature-icon { background: rgba(124,147,184,0.14); color: var(--root-400); }
+.feature-card h3 { font-size: 1.12rem; margin-bottom: 8px; }
+.feature-card p { color: var(--text-soft); font-size: 0.93rem; }
+
+/* -------------------- Stats band -------------------- */
+.stats-band {
+  background: linear-gradient(135deg, var(--root-800), var(--root-950));
+  color: #fff; border-radius: var(--radius-lg); padding: 56px 40px;
+}
+.stats-band .grid-4 { text-align: center; }
+.stats-band .stat-num { font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; color: var(--wing-500); }
+.stats-band .stat-label { color: rgba(255,255,255,0.72); font-size: 0.88rem; margin-top: 6px; }
+
+/* -------------------- Testimonials -------------------- */
+.testimonial-track { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+@media (max-width: 900px) { .testimonial-track { grid-template-columns: 1fr; } }
+.testimonial-card { position: relative; }
+.testimonial-card i.fa-quote-left { color: var(--wing-500); font-size: 1.4rem; margin-bottom: 14px; }
+.testimonial-card p.quote { font-size: 0.96rem; color: var(--text-soft); margin-bottom: 20px; }
+.testimonial-person { display: flex; align-items: center; gap: 12px; }
+.testimonial-person .avatar { width: 44px; height: 44px; font-size: 0.95rem; }
+.testimonial-person strong { font-size: 0.92rem; display: block; }
+.testimonial-person span { font-size: 0.78rem; color: var(--text-soft); }
+
+/* -------------------- Contact -------------------- */
+.contact-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; }
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-info-card { background: linear-gradient(160deg, var(--root-700), var(--root-950)); color: #fff; border-radius: var(--radius-lg); padding: 40px; }
+.contact-info-card h3 { color: #fff; margin-bottom: 14px; }
+.contact-info-card p { color: rgba(255,255,255,0.75); margin-bottom: 30px; }
+.contact-info-row { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+.contact-info-row i { color: var(--wing-500); font-size: 1.1rem; margin-top: 3px; }
+.contact-info-row strong { display: block; font-size: 0.9rem; }
+.contact-info-row span { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+/* -------------------- Section heading -------------------- */
+.section-head { max-width: 640px; margin-bottom: 50px; }
+.section-head h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); margin: 14px 0 10px; }
+.section-head p { color: var(--text-soft); font-size: 1.02rem; }
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }

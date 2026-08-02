@@ -1,0 +1,29 @@
+{
+  "name": "roots-and-wings",
+  "version": "1.0.0",
+  "description": "Roots & Wings - Alumni-Student Networking Platform",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "nodemon server/app.js",
+    "seed": "node server/seed.js"
+  },
+  "keywords": ["alumni", "networking", "mentorship", "students"],
+  "author": "Roots & Wings",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mysql2": "^3.10.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "express-session": "^1.18.0",
+    "multer": "^1.4.5-lts.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "body-parser": "^1.20.2",
+    "express-validator": "^7.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

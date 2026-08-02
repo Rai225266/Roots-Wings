@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alumni Directory | Roots & Wings</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body data-page="alumni">
+
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+  <main class="main-panel">
+    <div class="topbar" id="topbar"></div>
+    <div class="page-content">
+
+      <div class="toolbar">
+        <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input class="form-control" id="search-input" placeholder="Search by name, company, or role..."></div>
+        <select class="form-control filter-select" id="filter-university"><option value="">All Universities</option></select>
+        <select class="form-control filter-select" id="filter-company"><option value="">All Companies</option></select>
+        <select class="form-control filter-select" id="filter-industry"><option value="">All Industries</option></select>
+        <select class="form-control filter-select" id="filter-year"><option value="">All Grad Years</option></select>
+      </div>
+
+      <div class="grid grid-3" id="alumni-grid"><div class="loading-state"><span class="spinner"></span>Loading alumni...</div></div>
+      <div class="pagination" id="pagination"></div>
+    </div>
+  </main>
+</div>
+
+<!-- Mentor Request Modal -->
+<div class="modal-overlay" id="mentor-modal">
+  <div class="modal" style="position:relative;">
+    <button class="modal-close" data-close="mentor-modal"><i class="fa-solid fa-xmark"></i></button>
+    <h3>Request Mentorship</h3>
+    <p class="text-soft mb-2" id="mentor-modal-name"></p>
+    <form id="mentor-form">
+      <input type="hidden" name="alumni_id" id="mentor-alumni-id">
+      <div class="form-group"><label>Message</label><textarea class="form-control" name="message" placeholder="Introduce yourself and what you'd like guidance on..." required></textarea></div>
+      <button type="submit" class="btn btn-primary btn-block">Send Request</button>
+    </form>
+  </div>
+</div>
+
+<!-- Alumni Profile Modal -->
+<div class="modal-overlay" id="profile-modal">
+  <div class="modal" style="position:relative; max-width:560px;">
+    <button class="modal-close" data-close="profile-modal"><i class="fa-solid fa-xmark"></i></button>
+    <div id="profile-modal-body"><div class="loading-state"><span class="spinner"></span></div></div>
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/layout.js"></script>
+<script src="/js/alumni.js"></script>
+</body>
+</html>
