@@ -3,13 +3,10 @@ function notFound(req, res, next) {
 }
 
 function errorHandler(err, req, res, next) {
-  console.error("========== ERROR ==========");
-  console.error("Message:", err.message);
-  console.error("Code:", err.code);
-  console.error("SQL:", err.sql);
-  console.error("SQL Message:", err.sqlMessage);
-  console.error("Stack:", err.stack);
-  console.error("===========================");
+  console.error('Error:', err.message);
+
+  if (err.stack && process.env.NODE_ENV !== 'production')
+    console.error(err.stack);
 
   if (err.code === 'ER_DUP_ENTRY') {
     return res.status(409).json({
@@ -29,7 +26,6 @@ function errorHandler(err, req, res, next) {
     success: false,
     message: err.message || 'Internal server error'
   });
-}
 }
 
 module.exports = { notFound, errorHandler };
