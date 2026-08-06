@@ -45,10 +45,16 @@ exports.registerStudent = async (req, res, next) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     await conn.beginTransaction();
-    const [userResult] = await conn.query(
-      'INSERT INTO users (full_name, email, password, role, phone) VALUES (?, ?, ?, "student", ?)',
-      [full_name, email, hashedPassword, phone || null]
-    );
+  const [userResult] = await conn.query(
+  'INSERT INTO users (full_name, email, password, role, phone) VALUES (?, ?, ?, ?, ?)',
+  [
+    full_name,
+    email,
+    hashedPassword,
+    'student',
+    phone || null
+  ]
+);
     const userId = userResult.insertId;
 
     await conn.query(
@@ -97,10 +103,16 @@ exports.registerAlumni = async (req, res, next) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     await conn.beginTransaction();
-    const [userResult] = await conn.query(
-      'INSERT INTO users (full_name, email, password, role, phone) VALUES (?, ?, ?, "alumni", ?)',
-      [full_name, email, hashedPassword, phone || null]
-    );
+const [userResult] = await conn.query(
+  'INSERT INTO users (full_name, email, password, role, phone) VALUES (?, ?, ?, ?, ?)',
+  [
+    full_name,
+    email,
+    hashedPassword,
+    'alumni',
+    phone || null
+  ]
+);
     const userId = userResult.insertId;
 
     await conn.query(
